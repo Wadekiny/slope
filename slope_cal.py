@@ -254,14 +254,17 @@ if __name__ == '__main__':
 #        print("high",pid_high,"low",pid_low)
 
         #print(t_flag)
-        temp_speed = speed
-        if t_flag == 1:
-            temp_speed = 0
-        else :
-            temp_speed = speed
         special_t = 0
         if t_flag == 1 and t_line > 40:
             special_t = 1
+        else :
+            special_t = 0
+
+        temp_speed = speed
+        if special_t == 1:
+            temp_speed = 0
+        else :
+            temp_speed = speed
         if pid_value >= 0:
             #          head  head                                  tail
             command = [0xf5, 0x5f, special_t, pid_high , pid_low, 0, temp_speed, 0x6f]
