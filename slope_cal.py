@@ -17,7 +17,7 @@ t_flag = 0
 t_judge_y=10
 t_line = 0
 
-speed = 15  
+speed = 23  
 DEFAULT_END= 49
 DEFAULT_START = 59
 err_slope = 0
@@ -29,8 +29,8 @@ d_slope = 0
 err_center = 0
 ec_center = 0
 
-p_center = 5
-d_center = 0
+p_center = 10
+d_center = 4
 
 pid_value = 0.0
 
@@ -72,7 +72,7 @@ def Camera_Init():
     print(cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240))
     return cap
 
-mean = 80
+mean = 95   
 
 def Camera_Binary(para_image):
     ret, frame = para_image.read()
@@ -255,7 +255,7 @@ if __name__ == '__main__':
 
         #print(t_flag)
         special_t = 0
-        if t_flag == 1 and t_line > 40:
+        if t_flag == 1 and t_line > 50:
             special_t = 1
         else :
             special_t = 0
